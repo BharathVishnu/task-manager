@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JsonAuthEntryPoint implements AuthenticationEntryPoint {
-    private final ObjectMapper mapper;
+    private final ObjectMapper mapper = new ObjectMapper();
 
-    public JsonAuthEntryPoint(ObjectMapper mapper) { this.mapper = mapper; }
+    public JsonAuthEntryPoint(){}
 
     @Override
     public void commence(HttpServletRequest req, HttpServletResponse res, AuthenticationException ex)
