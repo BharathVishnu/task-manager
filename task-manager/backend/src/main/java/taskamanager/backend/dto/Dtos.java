@@ -1,12 +1,11 @@
 package taskamanager.backend.dto;
 
 import jakarta.validation.constraints.*;
-import taskamanager.backend.model.ActivityAction;
-import taskamanager.backend.model.Role;
-
 import java.time.Instant;
 
-import ch.qos.logback.core.status.Status;
+import taskamanager.backend.model.ActivityAction;
+import taskamanager.backend.model.Role;
+import taskamanager.backend.model.Status;   // YOUR enum, not logback's
 
 public final class Dtos {
     private Dtos() {}
@@ -39,21 +38,11 @@ public final class Dtos {
             @NotNull Long version) {}
     public record TaskResponse(Long id, Long projectId, String title, String description,
                                Status status, Long assigneeId, Long version, boolean blocked,
-                               Instant createdAt, Instant updatedAt) {
-
-        public TaskResponse(Long id2, Long projectId2, String title2, String description2,
-                        taskamanager.backend.model.Status status2, Long assigneeId2, Long version2, boolean blocked2,
-                        Instant createdAt2, Instant updatedAt2) {
-                //TODO Auto-generated constructor stub
-        }}
+                               Instant createdAt, Instant updatedAt) {}
 
     // ---- dependencies ----
     public record DependencyRequest(@NotNull Long dependsOnId) {}
-    public record DependencyResponse(Long dependsOnId, String title, Status status) {
-
-        public DependencyResponse(Long id, String title2, taskamanager.backend.model.Status status2) {
-            //TODO Auto-generated constructor stub
-        }}
+    public record DependencyResponse(Long dependsOnId, String title, Status status) {}
 
     // ---- activity ----
     public record ActivityResponse(Long id, Long userId, String userEmail, ActivityAction action,

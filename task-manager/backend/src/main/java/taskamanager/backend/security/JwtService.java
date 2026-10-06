@@ -3,6 +3,8 @@ package taskamanager.backend.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import taskamanager.backend.config.AppProperties;
+
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.Date;

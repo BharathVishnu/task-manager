@@ -26,4 +26,3 @@ public class JsonAuthEntryPoint implements AuthenticationEntryPoint {
         mapper.writeValue(res.getOutputStream(), new ApiError(code, "Authentication required", null));
     }
 }
-\

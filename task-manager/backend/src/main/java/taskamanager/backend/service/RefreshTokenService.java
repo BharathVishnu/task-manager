@@ -12,6 +12,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import taskamanager.backend.config.AppProperties;
 import taskamanager.backend.exception.AppException;
 import taskamanager.backend.model.RefreshToken;
 import taskamanager.backend.repository.RefreshTokenRepository;

@@ -5,6 +5,8 @@ import java.time.Duration;
 import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 
+import taskamanager.backend.config.AppProperties;
+
 @Component
 public class RefreshCookieFactory {
     public static final String NAME = "refresh_token";
